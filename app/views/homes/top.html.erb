@@ -9,11 +9,11 @@
  <div class="row">
 
     <div class="col-md-3">
-     <%= render 'users/list', user: @user %>
+     <%= render 'users/list', user: @user, book: @bo %>
     </div>
 
     <div class="col-md-8 offset-md-1">
-      
+
       <h1>Books</h1>
      <table class="table table-hover table-inverse">
       <thead>
@@ -48,8 +48,8 @@
 </div>
 
 <% else %>
-<h2>welcome to Bookers !!
-In Bookers,
+<h2>welcome to <i class="fas fa-book"></i>Bookers !!
+In <i class="fas fa-book"></i>Bookers,
 
 you can share and exchange your opinions , inpressions , and emotions
 

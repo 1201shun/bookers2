@@ -5,18 +5,21 @@
   <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: '/assets/no_image.jpg' %>
   <p>name <%= user.name %></p>
   <p>Introduction  <%= user.introduction %></p>
-  <% if user.id == current_user.id %>
-    <p><%= link_to "プロフィール編集", edit_user_path(user) %></p>
-  <% end %>
-  
-  <h1>New Book</h1>
-  <% if @book.errors.any? %>
-  <%= @book.errors.count %>errors prohibited this book from being saved:
-  <% @book.errors.full_messages.each do |message| %>
+
+
+  <li class="nav-item">
+   <%= link_to "", edit_user_path(user), class: "fas fa-user-cog btn btn-white text-secondary" %>
+  </li>
+
+
+<h1>New book</h1>
+  <% if book.errors.any? %>
+  <%= book.errors.count %>errors prohibited this book from being saved:
+  <% book.errors.full_messages.each do |message| %>
     <%= message %>
   <% end %>
   <% end %>
-  <%= form_with model:@book, local:true do |f| %>
+  <%= form_with model:book, local:true do |f| %>
 
   <h4>Title</h4>
   <%= f.text_field :title %>
@@ -24,7 +27,7 @@
   <h4>Body</h4>
   <%= f.text_field :body %>
   <h4></h4>
-  <%= f.submit 'CreateBook', class: "btn btn-secondary" "btn btn-success" %>
+  <%= f.submit 'Create Book', class: "btn btn-secondary" "btn btn-success" %>
 
   <% end %>
   </table>
